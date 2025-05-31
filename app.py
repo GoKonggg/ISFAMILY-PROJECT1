@@ -18,7 +18,7 @@ app = Flask(__name__, static_folder="public")
 @app.route('/')
 def index():
     # Default route, bisa redirect ke file HTML utama
-    return send_from_directory(app.static_folder, 'ai-check.html')
+    return send_from_directory(app.static_folder, 'index.html')
 
 @app.route('/<path:filename>')
 def serve_static(filename):
