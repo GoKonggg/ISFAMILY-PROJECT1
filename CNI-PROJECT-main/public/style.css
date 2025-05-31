@@ -1,0 +1,163 @@
+/* style.css (Versi Responsif) */
+
+/*
+   Perubahan di sini:
+   Style body tidak lagi untuk 'preview' di tengah desktop,
+   tapi menjadi style dasar halaman itu sendiri.
+*/
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    /* Kita hapus display:flex dll, karena .splash-screen akan mengisi seluruh body */
+}
+
+/* === Main Splash Screen Container === */
+.splash-screen {
+    /*
+      PERUBAHAN UTAMA DI SINI:
+      - 'width' diubah dari 480px menjadi 100% agar mengisi layar.
+      - 'height' diubah menjadi 'min-height: 100vh' agar selalu setinggi layar.
+    */
+    width: 100%;
+    min-height: 100vh; /* vh = viewport height */
+    box-sizing: border-box; /* Pastikan padding tidak membuat ukuran melebihi 100% */
+    
+    /* Style yang lain tetap sama */
+    background: linear-gradient(170deg, #61dafb, #34c1f7); 
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    justify-content: center; 
+}
+
+/* === Decorative Elements === */
+.circle {
+    position: absolute;
+    background-color: rgba(97, 218, 251, 0.4);
+    border-radius: 50%;
+    z-index: 1;
+    animation: rotate 40s linear infinite;
+}
+
+.circle-1 {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    right: -150px;
+    animation-direction: reverse;
+}
+
+.circle-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -120px;
+    left: -150px;
+}
+
+/* Dots Container & Individual Dots */
+.dots-container {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px; 
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #FFDE03; 
+    border-radius: 50%;
+    transform: scale(0);
+    animation: popIn 0.5s ease-out forwards;
+}
+
+.dot:nth-child(1) { animation-delay: 0.4s; }
+.dot:nth-child(2) { animation-delay: 0.5s; }
+.dot:nth-child(3) { animation-delay: 0.6s; }
+.dot:nth-child(4) { animation-delay: 0.7s; }
+.dot:nth-child(5) { animation-delay: 0.8s; }
+.dot:nth-child(6) { animation-delay: 0.9s; }
+.dot:nth-child(7) { animation-delay: 1.0s; }
+.dot:nth-child(8) { animation-delay: 1.1s; }
+
+/* === Content Elements === */
+.content {
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-card {
+    background-color: #FFFFFF; 
+    padding: 30px;
+    border-radius: 24px;
+    text-align: center;
+    /* Lebar card dibuat persentase agar ikut menyesuaikan */
+    width: 75%;
+    max-width: 400px; /* Batas lebar maksimal card */
+    box-shadow: 0px 15px 35px rgba(0, 90, 156, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+.main-card img {
+    max-width: 100%;
+    height: auto;
+    transform: scale(0.8);
+    opacity: 0;
+    animation: scaleIn 0.8s ease-out 0.5s forwards;
+}
+
+.brand-name {
+    font-size: 40px;
+    color: #005A9C; 
+    margin: 5px 0 0 0;
+    font-weight: 400;
+}
+
+.brand-name strong {
+    font-weight: 800;
+}
+
+.tagline {
+    font-size: 16px;
+    color: #6c757d; 
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-weight: 400;
+    opacity: 0;
+    animation: fadeInUpSmall 0.6s ease-out 0.7s forwards;
+}
+
+/* === ANIMATION DEFINITIONS === */
+/* ... (semua @keyframes tetap sama) ... */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes popIn {
+    from { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    to { transform: scale(1); }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUpSmall {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
