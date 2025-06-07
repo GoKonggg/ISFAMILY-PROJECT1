@@ -1,0 +1,163 @@
+/* --- Styling untuk Halaman Chat Dokter --- */
+
+/* Container utama untuk memberikan padding atas dan bawah */
+.main-content {
+    padding-top: 10px; /* Jarak dari header */
+    padding-bottom: 80px; /* Jarak dari navigasi bawah */
+    background-color: #f4f7f6;
+}
+
+.page-container {
+    padding: 0 20px;
+}
+
+.page-title h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.page-title p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* Styling untuk search bar */
+.search-container {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.search-container .bx-search {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 12px 15px 12px 45px; /* Padding kiri untuk ruang ikon */
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box; /* Penting untuk kalkulasi width */
+}
+
+/* Styling untuk daftar dokter */
+.doctor-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Jarak antar kartu dokter */
+}
+
+.doctor-card {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.doctor-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.doctor-card .doctor-info {
+    flex-grow: 1; /* Membuat info dokter mengisi ruang yang tersedia */
+}
+
+.doctor-card .doctor-info h3 {
+    font-size: 16px;
+    margin: 0 0 4px 0;
+    color: #2c3e50;
+}
+
+.doctor-card .doctor-info p {
+    font-size: 13px;
+    color: #7f8c8d;
+    margin: 0 0 6px 0;
+}
+
+/* Styling untuk status Online/Offline */
+.doctor-card .status {
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.doctor-card .status::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.doctor-card .status.online {
+    color: #27ae60;
+}
+
+.doctor-card .status.online::before {
+    background-color: #2ecc71;
+}
+
+.doctor-card .status.offline {
+    color: #95a5a6;
+}
+
+.doctor-card .status.offline::before {
+    background-color: #bdc3c7;
+}
+
+/* Tombol Chat */
+.chat-button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: background-color 0.3s;
+}
+
+.chat-button:hover {
+    background-color: #2980b9;
+}
+
+.chat-button.disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    pointer-events: none; /* Mencegah klik pada tombol disabled */
+}
+
+/* --- Styling untuk Banner di Halaman Chat Dokter --- */
+.banner-container {
+    background-color: #e0f7fa; /* Warna latar belakang banner */
+    color: #00838f; /* Warna teks banner */
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.banner-container a {
+    color: #00acc1;
+    text-decoration: underline;
+}
+
+.banner-container a:hover {
+    color: #00695c;
+}
