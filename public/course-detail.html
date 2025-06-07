@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Kursus</title>
+    <link rel="stylesheet" href="courses.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="course-detail-container">
+        <header class="detail-header">
+            <a href="courses.html" class="back-button"><i class='bx bx-arrow-back'></i></a>
+            <h3>Detail Kursus</h3>
+        </header>
+
+        <main class="detail-content">
+            <img src="" alt="Course Thumbnail" class="detail-thumbnail" id="detail-thumbnail">
+            
+            <div class="detail-main-info">
+                <h1 id="detail-title">Judul Kursus Akan Muncul di Sini</h1>
+                <div class="detail-instructor">
+                    <img src="" alt="Instructor" id="detail-instructor-img">
+                    <span id="detail-instructor-name">Nama Instruktur</span>
+                </div>
+                <div class="detail-rating">
+                    <i class='bxs-star'></i>
+                    <span id="detail-rating">4.9 (1,250 reviews)</span>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2>Deskripsi</h2>
+                <p id="detail-description">Deskripsi kursus akan muncul di sini. Pelajari dasar-dasar hingga tingkat lanjut mengenai topik yang dibahas dalam kursus ini.</p>
+            </div>
+
+            <div class="detail-section">
+                <h2>Kurikulum</h2>
+                <div class="curriculum-accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Modul 1: Pendahuluan</span>
+                            <i class='bx bx-chevron-down'></i>
+                        </button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li><i class='bx bx-play-circle'></i> Video Selamat Datang (2 menit)</li>
+                                <li><i class='bx bx-file'></i> Pengenalan Topik (5 menit)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Modul 2: Materi Inti</span>
+                            <i class='bx bx-chevron-down'></i>
+                        </button>
+                        <div class="accordion-content">
+                           <ul>
+                                <li><i class='bx bx-play-circle'></i> Pembahasan A (15 menit)</li>
+                                <li><i class='bx bx-play-circle'></i> Pembahasan B (20 menit)</li>
+                                <li><i class='bx bx-file'></i> Studi Kasus (10 menit)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="detail-footer">
+            <div class="price-info">
+                <span class="price-label">Harga</span>
+                <span class="price-amount" id="detail-price">Rp 0</span>
+            </div>
+            <a href="#" class="buy-button">Beli Kursus Ini</a>
+        </footer>
+    </div>
+
+    <script src="course-detail.js"></script>
+</body>
+</html>

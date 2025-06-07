@@ -161,3 +161,126 @@
 .banner-container a:hover {
     color: #00695c;
 }
+
+/* --- Styling untuk Halaman Chat Room --- */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Mengisi seluruh tinggi layar */
+    background-color: #e5ddd5; /* Latar belakang ala WhatsApp */
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    gap: 10px;
+}
+
+.chat-header .back-button {
+    font-size: 28px;
+    color: #333;
+}
+
+.chat-header .profile-pic-chat {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.chat-header .doctor-details {
+    flex-grow: 1;
+}
+
+.chat-header .doctor-details h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.chat-header .doctor-details span {
+    font-size: 13px;
+    color: #27ae60;
+}
+
+.chat-header .more-options {
+    font-size: 24px;
+    color: #555;
+}
+
+/* Area pesan */
+.messages-container {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto; /* Bisa di-scroll */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.message-bubble {
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 75%;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.message-bubble.doctor {
+    background-color: #ffffff;
+    align-self: flex-start; /* Pesan dokter di kiri */
+    border-top-left-radius: 5px;
+}
+
+.message-bubble.user {
+    background-color: #dcf8c6; /* Warna pesan pengguna */
+    align-self: flex-end; /* Pesan pengguna di kanan */
+    border-top-right-radius: 5px;
+}
+
+/* Area input pesan */
+.message-input-area {
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+}
+
+.message-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    border-radius: 25px;
+    padding: 5px 15px;
+}
+
+.message-form i {
+    font-size: 24px;
+    color: #888;
+}
+
+.message-form input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+}
+
+.message-form .send-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.message-form .send-button i {
+    color: white;
+    font-size: 20px;
+}

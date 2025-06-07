@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="courses.css"> </head>
+    <link rel="stylesheet" href="courses.css">
+</head>
 <body>
 
     <div class="page-container">
@@ -20,9 +21,29 @@
             </div>
         </header>
 
+        <section class="filter-section">
+            <div class="search-box">
+                <i class='bx bx-search'></i>
+                <input type="search" id="search-input" placeholder="Cari kursus...">
+            </div>
+            <div class="filter-controls">
+                <select id="level-filter" class="filter-select">
+                    <option value="semua">Semua Level</option>
+                    <option value="pemula">Pemula</option>
+                    <option value="menengah">Menengah</option>
+                    <option value="lanjutan">Lanjutan</option>
+                </select>
+                <select id="category-filter" class="filter-select">
+                    <option value="semua">Semua Kategori</option>
+                    <option value="nutrisi">Nutrisi</option>
+                    <option value="psikologi">Psikologi</option>
+                    <option value="perkembangan">Perkembangan Anak</option>
+                </select>
+            </div>
+        </section>
         <main class="course-grid">
             
-            <div class="course-card">
+            <div class="course-card" data-level="pemula" data-category="nutrisi">
                 <div class="card-thumbnail">
                     <img src="https://images.pexels.com/photos/3993212/pexels-photo-3993212.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Course thumbnail">
                     <span class="course-level">Pemula</span>
@@ -45,7 +66,7 @@
                 </div>
             </div>
 
-            <div class="course-card">
+            <div class="course-card" data-level="menengah" data-category="psikologi">
                 <div class="card-thumbnail">
                     <img src="https://images.pexels.com/photos/764681/pexels-photo-764681.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Course thumbnail">
                     <span class="course-level">Menengah</span>
@@ -67,36 +88,76 @@
                 </div>
             </div>
             
-            </main>
+            <div class="course-card" data-level="lanjutan" data-category="perkembangan">
+                <div class="card-thumbnail">
+                    <img src="https://images.pexels.com/photos/4545143/pexels-photo-4545143.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Course thumbnail">
+                    <span class="course-level">Lanjutan</span>
+                </div>
+                <div class="card-content">
+                    <h3>Kecerdasan Emosional untuk Tumbuh Kembang Anak</h3>
+                    <div class="instructor-info">
+                        <img src="https://i.ibb.co/yQj0bVf/psychologist-avatar.png" alt="Instructor">
+                        <span>Dr. Budi Setiawan</span>
+                    </div>
+                    <div class="course-rating">
+                        <i class='bxs-star'></i>
+                        <span>4.9 (1,500 reviews)</span>
+                    </div>
+                    <div class="course-price">
+                        <span class="discount-price">Rp 199.000</span>
+                    </div>
+                    <a href="#" class="course-button">Lihat Detail</a>
+                </div>
+            </div>
+
+            <div class="course-card" data-level="pemula" data-category="psikologi">
+                <div class="card-thumbnail">
+                    <img src="https://images.pexels.com/photos/3931603/pexels-photo-3931603.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Course thumbnail">
+                    <span class="course-level">Pemula</span>
+                </div>
+                <div class="card-content">
+                    <h3>Mengelola Tantrum Anak dengan Efektif</h3>
+                    <div class="instructor-info">
+                        <img src="https://i.ibb.co/yQj0bVf/psychologist-avatar.png" alt="Instructor">
+                        <span>Rina Puspita, M.Psi.</span>
+                    </div>
+                    <div class="course-rating">
+                        <i class='bxs-star'></i>
+                        <span>4.7 (850 reviews)</span>
+                    </div>
+                    <div class="course-price">
+                        <span class="discount-price">Rp 99.000</span>
+                    </div>
+                    <a href="#" class="course-button">Lihat Detail</a>
+                </div>
+            </div>
+            
+        </main>
     </div>
 
-    
     <nav class="bottom-nav">
-    <a href="home.html" class="nav-link active">
-        <i class='bx bxs-home'></i>
-        <span>Home</span>
-    </a>
+        <a href="home.html" class="nav-link">
+            <i class='bx bxs-home'></i>
+            <span>Home</span>
+        </a>
+        <a href="explore.html" class="nav-link">
+            <i class='bx bxs-book-bookmark'></i>
+            <span>Explore</span>
+        </a>
+        <a href="ai-check.html" class="nav-link">
+            <i class='bx bxs-check-shield'></i>
+            <span>AI Cek Fakta</span>
+        </a>
+        <a href="chat-dokter.html" class="nav-link active"> <i class='bx bxs-message-dots'></i>
+            <span>Chat Dokter</span>
+        </a>
+        <a href="courses.html" class="nav-link">
+            <i class='bx bxs-graduation'></i>
+            <span>Course</span>
+        </a>
+    </nav>
 
-    <a href="explore.html" class="nav-link">
-        <i class='bx bxs-book-bookmark'></i>
-        <span>Explore</span>
-    </a>
-
-    <a href="ai-check.html" class="nav-link">
-        <i class='bx bxs-check-shield'></i>
-        <span>AI Cek Fakta</span>
-    </a>
-
-    <a href="chat-dokter.html" class="nav-link">
-        <i class='bx bxs-message-dots'></i>
-        <span>Chat Dokter</span>
-    </a>
-
-    <a href="courses.html" class="nav-link">
-        <i class='bx bxs-graduation'></i>
-        <span>Course</span>
-    </a>
-</nav>
+    <script src="courses.js"></script>
 
 </body>
 </html>

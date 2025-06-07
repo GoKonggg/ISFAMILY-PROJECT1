@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room - isFamily</title>
+    <link rel="stylesheet" href="chat-dokter.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div class="chat-container">
+        <header class="chat-header">
+            <a href="chat-dokter.html" class="back-button"><i class='bx bx-chevron-left'></i></a>
+            <img src="" alt="Foto Dokter" id="chat-doctor-img" class="profile-pic-chat">
+            <div class="doctor-details">
+                <h3 id="chat-doctor-name">Nama Dokter</h3>
+                <span>Online</span>
+            </div>
+            <i class='bx bx-dots-vertical-rounded more-options'></i>
+        </header>
+
+        <main id="messages-container" class="messages-container">
+            </main>
+
+        <footer class="message-input-area">
+            <form id="message-form" class="message-form">
+                <i class='bx bx-paperclip'></i>
+                <input type="text" id="message-input" placeholder="Ketik pesan...">
+                <button type="submit" class="send-button">
+                    <i class='bx bxs-send'></i>
+                </button>
+            </form>
+        </footer>
+    </div>
+
+    <script src="chat-dokter.js"></script>
+</body>
+</html>
