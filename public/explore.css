@@ -201,3 +201,34 @@ body {
 .nav-link.active {
     color: var(--primary-blue);
 }
+
+/* Styling untuk pesan 'Konten tidak ditemukan' */
+.not-found {
+    text-align: center;
+    color: #6c757d;
+    padding: 20px;
+    font-style: italic;
+}
+
+/* Tambahkan kode ini ke jelajah.css */
+
+/* SESUDAH */
+.page-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px; /* <--- TAMBAHKAN BARIS INI */
+}
+
+.back-button {
+    font-size: 28px; /* Ukuran ikon */
+    color: #333; /* Warna ikon */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.page-header h1 {
+    margin: 0 0 0; /* Hapus margin bawaan h1 agar rapi */
+    flex: 1; /* Membuat judul mengisi sisa ruang */
+}
