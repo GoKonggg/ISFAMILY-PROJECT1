@@ -1,10 +1,9 @@
-// File: search.js
+// File: search.js (Versi Submit & New Search)
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Salin seluruh data 'allContent' yang sangat banyak dari file category.js ke sini
+    // Anggap semua data 'allContent' sudah ada di sini
     const allContent = [ 
-        // --- Kategori: Kehamilan ---
-    { id: 4, tipe: 'artikel', category: 'kehamilan', judul: 'Makanan Sehat untuk Ibu Hamil di Trimester Pertama', gambar: 'https://images.pexels.com/photos/7994070/pexels-photo-7994070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+        { id: 4, tipe: 'artikel', category: 'kehamilan', judul: 'Makanan Sehat untuk Ibu Hamil di Trimester Pertama', gambar: 'https://images.pexels.com/photos/7994070/pexels-photo-7994070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
     { id: 8, tipe: 'video', category: 'kehamilan', judul: 'Senam Hamil Aman untuk Dilakukan di Rumah', gambar: 'https://images.pexels.com/photos/3958342/pexels-photo-3958342.jpeg?auto=compress&cs=tinysrgb&w=600' },
     { id: 9, tipe: 'artikel', category: 'kehamilan', judul: 'Perlengkapan Bayi Baru Lahir yang Wajib Disiapkan', gambar: 'https://images.pexels.com/photos/3995914/pexels-photo-3995914.jpeg?auto=compress&cs=tinysrgb&w=600' },
     { id: 10, tipe: 'artikel', category: 'kehamilan', judul: 'Mengatasi Mual dan Muntah Selama Kehamilan', gambar: 'https://images.pexels.com/photos/6743969/pexels-photo-6743969.jpeg?auto=compress&cs=tinysrgb&w=600' },
@@ -65,7 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // --- Elemen DOM ---
-    const searchInput = document.querySelector('.search-container input');
+    const searchForm = document.querySelector('.search-form');
+    const searchInput = searchForm.querySelector('input');
     const filterChips = document.querySelectorAll('.filter-chips .chip');
     const contentListContainer = document.querySelector('.featured-list');
     const backButton = document.querySelector('.back-button');
@@ -77,17 +77,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Update Tampilan Awal ---
     resultTitle.textContent = `Hasil untuk "${queryFromURL}"`;
-    searchInput.value = queryFromURL; // Tampilkan query di search bar
+    searchInput.value = queryFromURL; // Tampilkan query awal di search bar
 
-    // --- Filter Konten Awal Berdasarkan Query ---
+    // --- Filter Konten Awal Berdasarkan Query dari URL ---
     let initialResults = [];
     if (queryFromURL) {
-        initialResults = allContent.filter(item => 
-            item.judul.toLowerCase().includes(queryFromURL.toLowerCase())
-        );
+        const queryWords = queryFromURL.toLowerCase().split(' ').filter(Boolean);
+        initialResults = allContent.filter(item => {
+            const title = item.judul.toLowerCase();
+            return queryWords.every(word => title.includes(word));
+        });
     }
     
-    // --- Fungsi Tampilan (Sama seperti sebelumnya) ---
+    // =================================================================================
+    // LOGIKA BARU UNTUK SUBMIT PENCARIAN BARU
+    // =================================================================================
+    searchForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Mencegah form reload biasa
+        const newQuery = searchInput.value.trim();
+        if (newQuery) {
+            // Arahkan ke halaman search itu sendiri dengan query yang baru
+            window.location.href = `search.html?q=${encodeURIComponent(newQuery)}`;
+        }
+    });
+
+
+    // --- Event Listener untuk Filter Chips (Artikel/Video) ---
+    // Logika ini sekarang menyaring dari 'initialResults' (hasil dari query URL)
+    filterChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            filterChips.forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            
+            const filterType = chip.textContent.toLowerCase();
+            let finalContent = initialResults;
+
+            if (filterType !== 'semua') {
+                finalContent = initialResults.filter(item => item.tipe === filterType);
+            }
+            displayContent(finalContent);
+        });
+    });
+
+    // --- Event Listener untuk Tombol Kembali ---
+    backButton.addEventListener('click', (e) => { e.preventDefault(); history.back(); });
+
+    // --- Fungsi Tampilan (Tidak ada perubahan) ---
     function displayContent(items) {
         contentListContainer.innerHTML = '';
         if (items.length === 0) {
@@ -96,38 +131,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         items.forEach(item => {
             const typeClass = item.tipe === 'video' ? 'video' : '';
+            const imagePath = item.gambar || 'images/default.png';
             const contentElement = `
                 <div class="featured-item">
                     <div class="item-text">
                         <span class="item-type ${typeClass}">${item.tipe.toUpperCase()}</span>
                         <p>${item.judul}</p>
                     </div>
-                    <img src="${item.gambar || 'images/default.jpg'}" alt="${item.judul}">
+                    <img src="${imagePath}" alt="${item.judul}" onerror="this.onerror=null;this.src='images/default.png';">
                 </div>
             `;
             contentListContainer.innerHTML += contentElement;
         });
     }
-
-    // --- Event Listeners ---
-    backButton.addEventListener('click', (e) => { e.preventDefault(); history.back(); });
-
-    // Filter chip (Artikel/Video) bekerja pada hasil pencarian awal
-    filterChips.forEach(chip => {
-        chip.addEventListener('click', () => {
-            filterChips.forEach(c => c.classList.remove('active'));
-            chip.classList.add('active');
-            const filterType = chip.textContent.toLowerCase();
-            let finalContent = initialResults;
-            if (filterType !== 'semua') {
-                finalContent = initialResults.filter(item => item.tipe === filterType);
-            }
-            displayContent(finalContent);
-        });
-    });
-
-    // Anda bisa membuat search bar di halaman ini fungsional juga jika mau,
-    // tapi untuk sekarang kita fokus menampilkan hasil awal.
 
     // --- Tampilkan Hasil Awal ---
     displayContent(initialResults);
