@@ -1,0 +1,127 @@
+/* ===== Variabel & Font ===== */
+:root {
+  --blue: #007bff;
+  --gray-900: #495057;
+  --radius: 15px;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
+  background-color: #20c9e1;
+}
+
+/* ===== Animasi ===== */
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(20px);}
+  to  {opacity:1;transform:translateY(0);}
+}
+.animated-item{
+  opacity:0;
+  animation:fadeInUp .6s ease-out forwards;
+}
+
+/* ===== Form ===== */
+.profile-form{
+  max-width:480px;
+  width:100%;
+  text-align:center;
+  padding:0 20px;
+}
+.subtitle{margin:-10px 0 20px;}
+.input-group{margin-bottom:2.3rem;}
+
+.profile-form label{
+  font-size:1.1rem;
+  font-weight:600;
+  display:block;
+  margin-bottom:1rem;
+  color:#000;
+}
+
+/* ===== Kartu Radio ===== */
+.card-choice-group{
+  display:flex;
+  justify-content:center;
+  gap:1rem;
+}
+.card-label{
+  width:140px;
+  height:75px;
+  padding-top: 30px;
+  border:2px solid transparent;
+  border-radius:var(--radius);
+  background:#fff;
+  box-shadow:0 4px 15px rgba(0,0,0,.05);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.1rem;
+  font-weight:600;
+  color:var(--gray-900);
+  cursor:pointer;
+  transition:all .2s;
+}
+.card-label:hover{
+  transform:translateY(-5px);
+  box-shadow:0 8px 20px rgba(0,0,0,.1);
+}
+input[type="radio"]{display:none;}
+input[type="radio"]:checked + .card-label{
+  border-color:var(--blue);
+  color:var(--blue);
+  box-shadow:0 0 0 3px rgba(0,123,255,.3);
+}
+
+/* ===== Textarea ===== */
+#health-details{
+  width:100%;
+  min-height:110px;
+  padding:12px 15px;
+  font-size:1rem;
+  border:1px solid #ddd;
+  border-radius:12px;
+  background:#f8f9fa;
+  box-shadow:inset 0 2px 4px rgba(0,0,0,.05);
+  resize:vertical;
+  transition:border-color .2s, box-shadow .2s;
+}
+#health-details:focus{
+  outline:none;
+  border-color:var(--blue);
+  box-shadow:0 0 0 3px rgba(0,123,255,.3);
+}
+
+/* ===== Tombol ===== */
+.continue-button{
+  width:100%;
+  padding:.9rem 1rem;
+  font-weight:600;
+  font-size:1.05rem;
+  color:#fff;
+  background:var(--blue);
+  border:none;
+  border-radius:var(--radius);
+  cursor:pointer;
+  transition:background .2s;
+}
+.continue-button:hover{background:#0067d9;}
+
+
+
+
+/* ======= RESPONSIVE < 480px ======= */
+@media (max-width:480px){
+  .card-label{
+    width:110px;
+    height:68px;
+    font-size:1rem;
+  }
+  .card-choice-group{gap:.6rem;}
+  #anim-header{font-size:1.5rem;}
+  .subtitle{font-size:.9rem;}
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Konsultasi Dokter</title>
+  <link rel="stylesheet" href="sum.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="consult-container">
+    <h1>Rekomendasi Konsultasi Dokter</h1>
+    <div class="summary-info">
+      <p>
+        Berdasarkan informasi kesehatan yang Anda masukkan, berikut adalah rekomendasi dokter spesialis yang sesuai:
+      </p>
+      <ul class="recommend-list">
+        <!-- Dynamically rendered, e.g.: -->
+        <li><b>Lactose intolerant</b>: <span>Spesialis Anak (Pediatrician)</span></li>
+        <li><b>Eczema</b>: <span>Spesialis Kulit (Dermatologist)</span></li>
+        <!-- ... -->
+      </ul>
+    </div>
+    <div class="cta-group">
+      <button class="consult-btn" onclick="window.location.href='chat-dokter.html'">Konsultasi Sekarang</button>
+      <button class="skip-btn" onclick="window.location.href='interest.html'">Nanti Saja</button>
+    </div>
+  </div>
+</body>
+</html>

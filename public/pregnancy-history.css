@@ -1,0 +1,136 @@
+:root {
+  --blue: #007bff;
+  --radius: 15px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background: #25d0ea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.history-form {
+  max-width: 410px;
+  width: 100%;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.11);
+  padding: 2.1rem 1.3rem 1.7rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.history-form h1 {
+  font-size: 1.36rem;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+  color: #232323;
+  text-align: center;
+}
+
+.history-form label {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #1c2731;
+  margin-bottom: 0.7rem;
+  margin-top: 1rem;
+  display: block;
+  text-align: left;
+  width: 100%;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.1rem;
+  margin-bottom: 1.3rem;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.radio-group input[type="radio"] {
+  display: none;
+}
+
+.radio-group label {
+  background: #f5f7fa;
+  border: 2px solid #e0e0e0;
+  border-radius: var(--radius);
+  padding: .55rem 1.2rem;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  transition: border-color .18s, color .18s, background .18s;
+}
+
+.radio-group input[type="radio"]:checked + label {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: #e8f5fe;
+}
+
+.history-form textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-height: 90px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 12px;
+  background: #f8f9fa;
+  font-size: 1rem;
+  padding: .8rem 1rem;
+  margin-top: .6rem;
+  margin-bottom: 1.7rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  transition: border-color .18s, box-shadow .18s;
+  resize: vertical;
+  color: #222;
+}
+
+
+.history-form textarea:focus {
+  border-color: var(--blue);
+  outline: none;
+}
+
+.continue-button {
+  width: 100%;
+  padding: 1rem 1rem;
+  font-weight: 600;
+  font-size: 1.08rem;
+  color: #fff;
+  background: var(--blue);
+  border: none;
+  border-radius: 13px;
+  cursor: pointer;
+  transition: background .2s;
+  letter-spacing: .04em;
+  margin-top: 8px;
+  box-shadow: 0 2px 12px rgba(0,123,255,.09);
+}
+
+.continue-button:hover {
+  background: #0290e0;
+}
+
+@media (max-width: 480px) {
+  .history-form {
+    padding: 1.1rem 0.2rem 1.1rem 0.2rem;
+    border-radius: 12px;
+  }
+  .history-form h1 {
+    font-size: 1.13rem;
+    margin-bottom: 1.1rem;
+  }
+  .radio-group {
+    gap: .7rem;
+  }
+  .continue-button {
+    font-size: .99rem;
+    padding: .9rem .8rem;
+  }
+}

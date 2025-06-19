@@ -1,0 +1,143 @@
+:root {
+  --blue: #007bff;
+  --radius: 15px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background: #25d0ea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.animated-item {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.followup-form {
+  max-width: 430px;
+  width: 100%;
+  text-align: center;
+  padding: 2.2rem 1.2rem 2.2rem 1.2rem;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 6px 24px rgba(0,0,0,.09);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subtitle {
+  margin: -10px 0 24px 0;
+  font-size: 1.06rem;
+  color: #333;
+}
+
+#followup-questions {
+  width: 100%;
+}
+
+.condition-followup {
+  width: 100%;
+  background: #f8fafd;
+  border-radius: 18px;
+  padding: 1.25rem 1.1rem 1.25rem 1.1rem;
+  margin-bottom: 2.3rem;
+  box-shadow:
+    0 2px 12px 0 rgba(0,0,0,0.08),
+    0 0.5px 2.5px 0 rgba(0,123,255,0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* New: Biar lebih simetris */
+  box-sizing: border-box;
+}
+
+
+.condition-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  margin-bottom: 1.1rem;
+  color: var(--blue);
+  width: 100%;
+  text-align: center;
+}
+
+.followup-group {
+  width: 100%;
+  margin-bottom: 1.12rem;
+  text-align: left;
+}
+
+.followup-group label {
+  display: block;
+  margin: 0 0 .4rem 0;
+  font-weight: 500;
+  color: #232323;
+}
+
+.followup-group input,
+.followup-group textarea {
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1.5px solid #e0e0e0;
+  background: #f8f9fa;
+  padding: .72rem 1rem;
+  box-sizing: border-box;
+  resize: vertical;
+  margin-bottom: 0;
+  transition: border-color .18s, box-shadow .18s;
+  box-shadow: 0 1px 4px rgba(0,0,0,.03);
+}
+.followup-group input:focus,
+.followup-group textarea:focus {
+  border-color: var(--blue);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,123,255,.09);
+}
+
+.continue-button {
+  width: 100%;
+  padding: 1rem 1rem;
+  font-weight: 600;
+  font-size: 1.09rem;
+  color: #fff;
+  background: var(--blue);
+  border: none;
+  border-radius: 13px;
+  cursor: pointer;
+  transition: background .2s;
+  letter-spacing: .04em;
+  margin-top: 10px;
+  box-shadow: 0 2px 12px rgba(0,123,255,.08);
+}
+
+.continue-button:hover {
+  background: #0290e0;
+}
+
+@media (max-width: 480px) {
+  .followup-form {
+    padding: 1.2rem 0.3rem 1.3rem 0.3rem;
+    border-radius: 13px;
+  }
+  .condition-followup {
+    padding: 0.8rem 0.4rem 0.5rem 0.4rem;
+    border-radius: 10px;
+  }
+  .condition-title {
+    font-size: 1.01rem;
+    margin-bottom: 0.65rem;
+  }
+  .subtitle { font-size: .98rem;}
+}

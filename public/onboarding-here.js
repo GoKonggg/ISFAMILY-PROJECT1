@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Onboarding (here) complete! Redirecting to home...');
 
             // Arahkan pengguna ke halaman home.html
-            window.location.href = 'home.html';
+            window.location.href = 'onboarding-health.html';
         });
     }
 });

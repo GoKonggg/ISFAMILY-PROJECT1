@@ -1,0 +1,140 @@
+:root {
+  --blue: #007bff;
+  --radius: 15px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background: #25d0ea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.animated-item {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.interest-form {
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  padding: 2.3rem 1.2rem 2.2rem 1.2rem;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 6px 24px rgba(0,0,0,.09);
+}
+
+.subtitle {
+  margin: -10px 0 22px 0;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.interest-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2.4rem;
+}
+
+.interest-card {
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: var(--radius);
+  min-width: 130px;
+  min-height: 62px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.03);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0 20px;
+  position: relative;
+  transition: border-color .18s, color .18s, box-shadow .18s, background .18s;
+  user-select: none;
+}
+
+/* Hide the checkbox, let the card act as UI */
+.interest-card input[type="checkbox"] {
+  display: none;
+}
+
+/* Card checked style */
+.interest-card input[type="checkbox"]:checked + span {
+  color: var(--blue);
+  font-weight: 600;
+}
+.interest-card input[type="checkbox"]:checked ~ .interest-card {
+  border-color: var(--blue);
+}
+
+.interest-card input[type="checkbox"]:checked + span {
+  position: relative;
+}
+.interest-card input[type="checkbox"]:checked + span::before {
+  content: '✔';
+  color: var(--blue);
+  font-size: 1.12rem;
+  position: absolute;
+  left: -1.3em;
+  top: 0.04em;
+}
+
+.interest-card:hover {
+  border-color: var(--blue);
+  background: #e8f5fe;
+  color: var(--blue);
+}
+
+.continue-button {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff;
+  background: var(--blue);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background .2s;
+  letter-spacing: .04em;
+}
+
+.continue-button:hover {
+  background: #0290e0;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .interest-form {
+    padding: 1.3rem 0.4rem 1.6rem 0.4rem;
+    border-radius: 10px;
+  }
+  .interest-group {
+    gap: .7rem;
+  }
+  .interest-card {
+    min-width: 112px;
+    min-height: 50px;
+    font-size: .97rem;
+    padding: 0 10px;
+  }
+  .continue-button {
+    font-size: 1rem;
+  }
+  h1 { font-size: 1.3rem; }
+  .subtitle { font-size: .97rem;}
+}

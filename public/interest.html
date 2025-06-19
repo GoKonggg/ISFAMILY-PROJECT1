@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Interests</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="interest.css" />
+</head>
+<body>
+  <form class="interest-form" id="interest-form">
+    <h1 class="animated-item">Tell us what you’re interested in</h1>
+    <p class="subtitle animated-item">
+      Choose topics you want to explore or get recommendations for.
+    </p>
+
+    <div class="interest-group animated-item">
+      <!-- Edit/replace topics as you like -->
+      <label class="interest-card">
+        <input type="checkbox" name="interests" value="Nutrition" />
+        <span>Nutrition</span>
+      </label>
+      <label class="interest-card">
+        <input type="checkbox" name="interests" value="Development" />
+        <span>Baby Development</span>
+      </label>
+      <label class="interest-card">
+        <input type="checkbox" name="interests" value="Sleep" />
+        <span>Sleep Routine</span>
+      </label>
+      <label class="interest-card">
+        <input type="checkbox" name="interests" value="Immunization" />
+        <span>Immunization</span>
+      </label>
+      <label class="interest-card">
+        <input type="checkbox" name="interests" value="Allergies" />
+        <span>Allergies</span>
+      </label>
+    </div>
+
+    <button type="submit" class="continue-button animated-item">CONTINUE</button>
+  </form>
+  <script src="interest.js"></script>
+</body>
+</html>

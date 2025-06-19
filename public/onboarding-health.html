@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health Details</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Style eksternal -->
+  <link rel="stylesheet" href="onboarding-health.css" />
+  
+</head>
+<body>
+  <form class="profile-form" id="health-form">
+    <h1 id="anim-header" class="animated-item">A little bit more...</h1>
+    <p id="anim-subtitle" class="subtitle animated-item">
+      This information helps us to personalize your experience.
+    </p>
+
+    <div id="anim-question" class="input-group animated-item">
+      <label>Does your baby have any specific health conditions or allergies?</label>
+
+      <div class="card-choice-group">
+        <div class="card-option">
+          <input type="radio" id="health-no" name="health_condition" value="no" checked>
+          <label for="health-no" class="card-label">No</label>
+        </div>
+
+        <div class="card-option">
+          <input type="radio" id="health-yes" name="health_condition" value="yes">
+          <label for="health-yes" class="card-label">Yes</label>
+        </div>
+      </div>
+    </div>
+
+    <div id="health-details-group" class="input-group animated-item" style="display:none;">
+      <label for="health-details">Please specify (optional):</label>
+      <textarea id="health-details" name="health_details"
+        placeholder="e.g., Lactose intolerant, eczema, etc."></textarea>
+    </div>
+
+    <button id="anim-button" type="submit" class="continue-button animated-item">FINISH</button>
+  </form>
+
+  <!-- Script eksternal -->
+  <script src="onboarding-health.js"></script>
+</body>
+</html>

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Onboarding (on the way) complete! Redirecting to home...');
 
             // Arahkan pengguna ke halaman home.html
-            window.location.href = 'home.html';
+            window.location.href = 'pregHis.html';
         });
     }
 });

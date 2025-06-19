@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pregnancy History</title>
+  <link rel="stylesheet" href="pregnancy-history.css" />
+</head>
+<body>
+  <form id="pregnancy-history-form" class="history-form">
+  <h1>Pregnancy History</h1>
+
+  <label>Is this your first pregnancy?</label>
+  <div class="radio-group">
+  <input type="radio" id="first-yes" name="first_pregnancy" value="yes" required>
+  <label for="first-yes">Yes</label>
+  <input type="radio" id="first-no" name="first_pregnancy" value="no">
+  <label for="first-no">No</label>
+</div>
+
+
+  <label for="preg-condition">Any health concerns during this pregnancy? (optional)</label>
+  <textarea id="preg-condition" name="preg_condition" placeholder="e.g., hypertension, gestational diabetes, etc."></textarea>
+
+  <button type="submit" class="continue-button">CONTINUE</button>
+</form>
+
+  <script>
+  document.getElementById('pregnancy-history-form').onsubmit = function(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+    localStorage.setItem('pregnancy_history', JSON.stringify(data));
+
+    if (data.first_pregnancy === "yes") {
+      window.location.href = "consult-first.html";
+    } else if (data.first_pregnancy === "no") {
+      window.location.href = "consult-repeat.html";
+    } else {
+      // fallback (should not happen)
+      window.location.href = "pregnancy-consult.html";
+    }
+  }
+</script>
+
+</body>
+</html>
